@@ -1,5 +1,7 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
 return [
 
     /*
@@ -26,7 +28,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'development'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +41,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -81,6 +83,7 @@ return [
     */
 
     'locale' => 'en',
+    'Shopifyuri'=>'https://a1c42b0fa1f5ef578484a58537811469:e812a7cb2000a0632aabc10a64442d29@johnsmustangparts.myshopify.com/admin/api/2019-07',
 
     /*
     |--------------------------------------------------------------------------

@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route:get('/',function(){
- 
-});
+
+Route::get('orders/{id}','getorders@index')->where('order_id', '[0-9]+');
+
