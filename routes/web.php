@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('orders/{id}','getorders@index')->where('order_id', '[0-9]+');
-
+Route::get('orders/{id}','OrdersController@index');
+Route::get('draft_orders/{id}','OrdersController@draft_orders');
+Route::get('products/{id}/metafields','ProductsController@index');
+Route::get('products/{pid}/variants/{vid}/metafields','ProductsController@variant_metafields');
+Route::get('checkouts/{id}','CheckoutController@index');
