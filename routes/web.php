@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,4 @@ Route::get('draft_orders/{id}','OrdersController@draft_orders');
 Route::get('products/{id}/metafields','ProductsController@index');
 Route::get('products/{pid}/variants/{vid}/metafields','ProductsController@variant_metafields');
 Route::get('checkouts/{id}','CheckoutController@index');
+Route::post('quote', 'QuoteController@index');
