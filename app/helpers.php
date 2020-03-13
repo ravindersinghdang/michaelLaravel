@@ -46,4 +46,17 @@
     	}
 	}
 
+	if (! function_exists('getDraftOrder')) {
+		function getDraftOrder($url, $draft_order_id, $json = false) {
+			$response =  getData($url);
+			if($json) {
+				return $response;
+			}
+
+			$dataobject = json_decode($response);
+		 	$data = json_decode(json_encode($dataobject), true);
+
+			return $data['draft_order'];
+		}
+	}
 ?>

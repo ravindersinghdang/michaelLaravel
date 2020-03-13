@@ -16,7 +16,8 @@ class QuoteController extends Controller
 
 				$shopify_url = Config::get('app.SHOPIFY_PRIVATE_API_URL');
         		$url = $shopify_url.'/draft_orders/'.$request->input("draft_order_id").'.json';
-        		$response = getData($url); 
+
+        		$response = getDraftOrder($url, $request->input("draft_order_id"), false);
 
 				if($response && $response["id"]) {
 					$tags = ($response["tags"]) ? explode(",", $response["tags"]) : array();
