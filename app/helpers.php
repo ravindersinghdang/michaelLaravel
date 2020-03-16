@@ -59,4 +59,12 @@
 			return $data['draft_order'];
 		}
 	}
+
+	if(! function_exists('createDraftOrder')){
+		function createDraftOrder($params) {
+			$url = SHOPIFY_PRIVATE_API_URL.'/draft_orders.json';
+			$response = postData($url, $params);
+			return $response;
+		}
+	}
 ?>

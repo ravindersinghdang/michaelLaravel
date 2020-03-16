@@ -134,7 +134,24 @@ return [
     |
     */
     'SHOPIFY_PRIVATE_API_URL' => 'https://'.env('SHOPIFY_USER').':'.env('SHOPIFY_PASSWORD').'@johnsmustangparts.myshopify.com/admin/api/2019-07',
-    
+    'SS_API_KEY' => 'c20c7a368b094445929a7206df06ea0c',
+    'SS_SECRET_KSY' => 'd3de57c0b2a945968d512383a591abdd',
+    'SS_API_URL' => 'https://ssapi.shipstation.com',
+
+    'ALLOWED_IPS'  => [
+        "::1",
+        "173.11.223.240",
+        "173.11.223.241",
+        "173.11.223.242",
+        "173.11.223.243",
+        "173.11.223.244",
+        "173.11.223.245",
+        "173.11.223.246",
+        "173.11.223.247",
+            "171.96.39.32",
+        "49.49.248.87",
+        "2403:6200:88a4:312d:4031:dd65:ec7b:95e2"
+    ],
 
     'providers' => [
 

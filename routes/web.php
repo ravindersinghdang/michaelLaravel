@@ -21,3 +21,6 @@ Route::get('products/{id}/metafields','ProductsController@index');
 Route::get('products/{pid}/variants/{vid}/metafields','ProductsController@variant_metafields');
 Route::get('checkouts/{id}','CheckoutController@index');
 Route::post('quote', 'QuoteController@index');
+Route::post('create_draft_order', 'OrdersController@create_draft_order');
+Route::post('order_fulfillment', 'OrdersController@order_fulfillment');
+Route::post('order_update', 'OrdersController@order_update');

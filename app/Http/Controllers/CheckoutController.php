@@ -27,5 +27,4 @@ class CheckoutController extends Controller
         return $data;
         exit();
     }
-    
 }
