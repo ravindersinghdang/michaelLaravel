@@ -62,9 +62,42 @@
 
 	if(! function_exists('createDraftOrder')){
 		function createDraftOrder($params) {
-			$url = SHOPIFY_PRIVATE_API_URL.'/draft_orders.json';
+			$shopify_url = Config::get('app.SHOPIFY_PRIVATE_API_URL');
+			$url = $shopify_url.'/draft_orders.json';
 			$response = postData($url, $params);
 			return $response;
+		}
+	}
+
+	if(! function_exists('getProductVariantMetaFields')){
+		function getProductVariantMetaFields($product_id,$variant_id) {
+			$shopify_url = Config::get('app.SHOPIFY_PRIVATE_API_URL');			
+			$url = $shopify_url.'/products/'.$product_id.'/variants/'.$variant_id.'/metafields.json';
+			$response =  getData($url);
+			if($response['metafields'] && count($response['metafields']) > 0){
+				foreach ($response['metafields'] as $key => $data) {
+					if($data['namespace'] == "specs" && $data['key'] == "location"){
+						$metafields = $data['value'];
+					}
+				}
+				return $metafields;
+			}
+		}
+	}
+
+	if(! function_exists('getProductMetaFields')){
+		function getProductMetaFields($product_id) {
+			$shopify_url = Config::get('app.SHOPIFY_PRIVATE_API_URL');
+			$url = $shopify_url.'/products/'.$product_id.'/metafields.json';
+			$response =  getData($url);
+			if($response['metafields'] && count($response['metafields']) > 0){
+				foreach ($response['metafields'] as $key => $data) {
+					if($data['namespace'] == "specs" && $data['key'] == "location"){
+						$metafields = $data['value'];
+					}
+				}
+				return $metafields;
+			}
 		}
 	}
 ?>

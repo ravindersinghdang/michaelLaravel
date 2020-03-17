@@ -27,4 +27,10 @@ class CheckoutController extends Controller
         return $data;
         exit();
     }
+
+    public function checkouts(){
+        $shopify_url = Config::get('app.SHOPIFY_PRIVATE_API_URL');
+        $url = $shopify_url.'/checkouts.json?limit=250';
+        return getData($url);
+    }
 }

@@ -22,6 +22,9 @@ class VerifyCsrfToken extends Middleware
         'quote',        
         'create_draft_order',
         'order_fulfillment',
-        'order_update'
+        'order_update',
+        'create_order',
+        'delete_order',
+        'update_order'
     ];
 }
